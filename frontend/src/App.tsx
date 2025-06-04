@@ -5,7 +5,7 @@ function App() {
   const [message, setMessage] = useState("Loading...")
 
   useEffect(() => {
-    axios.get("http://localhost:8000/api/hello")
+    axios.get("http://backend:8000/test-user")
       .then(response => setMessage(response.data.msg))
       .catch(() => setMessage("Failed to connect to backend"))
   }, [])

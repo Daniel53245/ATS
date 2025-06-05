@@ -1,0 +1,23 @@
+# Node modules (keep container's version)
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Build output
+dist
+
+# OS junk files
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Editor/IDE configs
+.vscode
+.idea
+
+# Docker
+Dockerfile
+docker-compose.yml

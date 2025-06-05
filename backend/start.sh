@@ -8,18 +8,10 @@ done
 
 echo "✅ Database is ready!"
 
-# Optional: Clean up old migrations (if resetting)
+# Alembic
 rm -rf alembic/versions/*
-echo "🧹 Cleaned old Alembic versions"
-
-# Generate fresh migration
-echo "📦 Generating migration..."
 alembic revision --autogenerate -m "init"
-
-# Apply it
-echo "🚀 Applying migration..."
 alembic upgrade head
 
-# Start the server
-echo "🌐 Starting FastAPI app..."
-exec uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+# Run FastAPI
+exec uvicorn app.main:app --host 0.0.0.0 --port 8000 

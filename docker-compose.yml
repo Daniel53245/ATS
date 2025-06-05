@@ -2,15 +2,20 @@ version: '3.9'
 services:
   frontend:
     build: ./frontend
+    environment:
+      - CHOKIDAR_USEPOLLING=true
     ports:
       - "3000:3000"
     depends_on:
       - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
 
   backend:
     build: ./backend
     ports:
-      - "8000:8000"
+      - "0:8000"
     environment:
       - DATABASE_URL=postgresql://user:password@db:5432/jobtracker
     depends_on:
